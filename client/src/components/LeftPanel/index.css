@@ -1,0 +1,8 @@
+#header-logo {
+    max-width: 3rem;
+    height: auto;
+}
+
+.panel-btn:hover {
+    color: white !important;
+}
