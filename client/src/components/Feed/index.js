@@ -11,6 +11,9 @@ class Feed extends Component {
                 <Post />
                 <Post />
                 <Post />
+                <Post />
+                <Post />
+                <Post />
             </div>
         );
     }

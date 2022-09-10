@@ -1,0 +1,9 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato");
+
+* {
+    font-family: "Lato", Verdana, Geneva, Tahoma, sans-serif;
+}
+
+html, body {
+    background-color: rgb(249, 249, 249) !important;
+}
