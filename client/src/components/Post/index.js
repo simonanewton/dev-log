@@ -41,7 +41,7 @@ class Post extends Component {
                             <Card.Title className="fw-bold">{this.state.name}</Card.Title>
                             <Card.Subtitle className="text-muted">{`@${this.state.username} | ${this.state.date}`}</Card.Subtitle>
                         </div>
-                        <FontAwesomeIcon icon={faArrowUpFromBracket} size="lg" className="mx-2 text-secondary share-btn" />
+                        <FontAwesomeIcon icon={faArrowUpFromBracket} size="lg" className="mx-2 text-secondary" />
                     </div>
                 </Card.Header>
                 <Card.Body className="px-4 pt-0 pb-3">
