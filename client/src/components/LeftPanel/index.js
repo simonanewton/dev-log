@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faLaptopCode, faHouseUser, faServer, faCircleInfo} from "@fortawesome/free-solid-svg-icons";
+import { faLaptopCode, faHouseUser, faServer, faCircleInfo } from "@fortawesome/free-solid-svg-icons";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import { faTwitter } from "@fortawesome/free-brands-svg-icons";
 import PanelBtn from "../PanelBtn";
@@ -10,9 +10,11 @@ class LeftPanel extends Component {
     render() {
         return (
             <div className="px-3 px-lg-4 py-4">
-                <div className="py-2 mb-4 d-flex justify-content-center justify-content-lg-end align-items-center">
-                    <h4 className="me-3 mb-0 fw-bold d-none d-lg-block">Developer Log</h4>
-                    <FontAwesomeIcon icon={faLaptopCode} size="3x" />
+                <div className="py-2 mb-4">
+                    <a href="/" className="d-flex justify-content-center justify-content-lg-end align-items-center panel-link">
+                        <h4 className="me-2 me-lg-3 mb-0 fw-bold text-end d-none d-lg-block">Developer Log</h4>
+                        <FontAwesomeIcon icon={faLaptopCode} size="3x" />
+                    </a>
                 </div>
                 <div className="text-center text-lg-end w-100">
                     <PanelBtn color={"outline-dark"} title={"Home"} icon={faHouseUser} />

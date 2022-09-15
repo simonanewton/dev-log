@@ -1,0 +1,15 @@
+#right-panel {
+    font-size: 1rem;
+}
+
+@media only screen and (max-width: 1200px) {
+    #right-panel {
+        font-size: 0.9rem;
+    }
+}
+
+@media only screen and (max-width: 992px) {
+    #right-panel {
+        font-size: 0.8rem;
+    }
+}

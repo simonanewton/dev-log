@@ -1,9 +1,45 @@
-@import url("https://fonts.googleapis.com/css2?family=Lato");
+@import url("https://fonts.googleapis.com/css2?family=Roboto");
 
 * {
-    font-family: "Lato", Verdana, Geneva, Tahoma, sans-serif;
+    font-family: "Roboto", Verdana, Geneva, Tahoma, sans-serif;
+
 }
 
-html, body {
-    background-color: #dee2e6!important;
+html,
+body {
+    background-color: #d7dee6!important;
+    scroll-behavior: smooth;
+}
+
+.panel-link {
+    text-decoration: none;
+    color: inherit;
+}
+
+.panel-link:hover {
+    color: black;
+}
+
+.profile-img {
+    width: 4rem !important;
+    height: auto;
+}
+
+.profile-img-news {
+    width: 3.5rem !important;
+    height: auto;
+}
+
+.profile-img:hover,
+.profile-img-news:hover {
+    filter: brightness(95%);
+}
+
+.post-link {
+    color: inherit !important;
+    text-decoration: none;
+}
+
+.post-link:hover {
+    text-decoration: underline !important;
 }

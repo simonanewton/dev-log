@@ -1,9 +1,23 @@
-.profile-img {
-    width: 3.5rem !important;
-    height: auto;
+.share-btn:hover,
+.post-icon:hover>svg {
+    color: #212529 !important;
+    cursor: pointer;
 }
 
-.share-btn:hover {
-    color: black !important;
+.post-img:hover {
+    filter: brightness(97%);
     cursor: pointer;
+}
+
+.modal-content {
+    border: none !important;
+}
+
+.hashtag {
+    text-decoration: none !important;
+}
+
+.hashtag:hover {
+    background-color: #212529 !important;
+    color: white;
 }
