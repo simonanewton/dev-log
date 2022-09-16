@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import MobileHeader from "../MobileHeader";
 import Post from "../Post";
 import "./index.css";
 
@@ -26,10 +27,14 @@ class Feed extends Component {
 
     render() {
         return (
-            <div className="px-3 pt-2 pb-4">
-                <Post post={this.state.post_data} />
-                <Post post={this.state.post_data} />
-                <Post post={this.state.post_data} />
+            <div>
+                <div className="mobile-only">
+                    <MobileHeader />
+                </div>
+                <div className="px-4 px-md-3 px-lg-4 pt-2 pb-4">
+                    <Post post={this.state.post_data} />
+                    <Post post={this.state.post_data} />
+                </div>
             </div>
         );
     }

@@ -13,7 +13,7 @@ class App extends Component {
 
 	render() {
 		return (
-			<Container fluid="xl" className="px-md-2">
+			<Container fluid="xl" className="px-0">
 				<Row className="g-0">
 					<Col sm={2} lg={3} className="border-end border-white border-3 d-none d-sm-block">
 						<LeftPanel />
