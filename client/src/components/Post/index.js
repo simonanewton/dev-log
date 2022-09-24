@@ -25,7 +25,7 @@ class Post extends Component {
         let badges = [];
         tags.forEach(tag => {
             badges.push(
-                <Badge as={"a"} href={`https://twitter.com/search?q=%23${tag}`} target="_blank" pill bg="secondary" key={tag} className="me-2 hashtag">
+                <Badge key={tag} as={"a"} href={`https://twitter.com/search?q=%23${tag}`} target="_blank" pill bg="secondary" className="me-2 hashtag">
                     {`# ${tag}`}
                 </Badge>);
         });
@@ -60,7 +60,7 @@ class Post extends Component {
                 <Card.Body className="px-4 pt-0 pb-3">
                     <Card.Text className="mb-3">{this.props.post.text}</Card.Text>
                     <div>
-                        <Card.Img src={this.props.post.image} alt={""} onClick={this.toggleModal} className={`mb-3 border post-img ${!this.props.post.image ? "d-none" : ""}`} />
+                        <Card.Img src={this.props.post.image} alt={""} onClick={this.toggleModal} className={`mb-3 bg-light border border-light post-img ${!this.props.post.image ? "d-none" : ""}`} />
                         <Modal size="xl" centered show={this.state.showModal} onHide={this.toggleModal}>
                             <Card.Img src={this.props.post.image} alt={""} className="rounded" />
                         </Modal>

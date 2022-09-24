@@ -11,8 +11,7 @@ class LeftPanel extends Component {
         return (
             <div className="px-3 px-lg-4 py-4">
                 <div className="py-2 mb-4">
-                    <a href="/" className="d-flex justify-content-center justify-content-lg-end align-items-center panel-link">
-                        <h4 className="me-2 me-lg-3 mb-0 fw-bold text-end d-none d-lg-block">Developer Log</h4>
+                    <a href="/" className="d-flex justify-content-center align-items-center panel-link">
                         <FontAwesomeIcon icon={faLaptopCode} size="3x" />
                     </a>
                 </div>

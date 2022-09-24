@@ -13,12 +13,12 @@ class App extends Component {
 
 	render() {
 		return (
-			<Container fluid="xl" className="px-0">
+			<Container fluid="xxl" className="px-0">
 				<Row className="g-0">
-					<Col sm={2} lg={3} className="border-end border-white border-3 d-none d-sm-block">
+					<Col sm={2} lg={2} className="border-end border-white border-3 d-none d-sm-block">
 						<LeftPanel />
 					</Col>
-					<Col xs={12} sm={10} md={6} lg={5}>
+					<Col xs={12} sm={10} md={6} lg={6}>
 						<Feed />
 					</Col>
 					<Col md={4} className="border-start border-white border-3 d-none d-sm-block">
