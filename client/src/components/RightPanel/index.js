@@ -49,7 +49,7 @@ class RightPanel extends Component {
 
     render() {
         return (
-            <div className="px-3 px-lg-4 py-4" id="right-panel">
+            <div className="px-3 px-lg-4 pt-4 pb-5" id="right-panel">
                 <div className="py-2 mb-3">
                     <a href="https://twitter.com/i/lists/1568647817408778240" target="_blank" rel="noreferrer" className="d-flex align-items-center panel-link">
                         <FontAwesomeIcon icon={faSquareRss} size="3x" />

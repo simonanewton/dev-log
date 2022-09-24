@@ -2,13 +2,17 @@
 
 * {
     font-family: "Roboto", Verdana, Geneva, Tahoma, sans-serif;
+    scroll-behavior: smooth;
 
 }
 
 html,
 body {
     background-color: #d7dee6!important;
-    scroll-behavior: smooth;
+}
+
+.overflow-auto::-webkit-scrollbar {
+    display: none;
 }
 
 .panel-link {
