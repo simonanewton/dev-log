@@ -1,14 +1,13 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto");
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap');
 
 * {
-    font-family: "Roboto", Verdana, Geneva, Tahoma, sans-serif;
-    scroll-behavior: smooth;
-
+    font-family: "Roboto" !important;
+    scroll-behavior: smooth !important;
 }
 
 html,
 body {
-    background-color: #d7dee6!important;
+    background-color: #cbdaec !important;
 }
 
 .overflow-auto::-webkit-scrollbar {

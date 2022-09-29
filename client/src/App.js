@@ -3,12 +3,36 @@ import { Container, Row, Col } from "react-bootstrap";
 import LeftPanel from "./components/LeftPanel";
 import Feed from "./components/Feed";
 import RightPanel from "./components/RightPanel";
+import API from "./utils/api";
 import "./App.css";
 
 class App extends Component {
 	constructor(props) {
 		super(props);
-		this.state = {}
+		this.state = {
+			tweets: [],
+			news: []
+		}
+	}
+
+	getTweets = () => {
+		let allTweets = API.getTweets();
+		console.log(allTweets);
+		return allTweets;
+	}
+	getDefault = async () => {
+		let defaultTweets = await API.getDefault();
+		console.log(defaultTweets);
+		return defaultTweets;
+	}
+
+	generateDefault = async () => {
+		await API.generateDefault();
+		return;
+	}
+
+	componentDidMount = () => {
+		// this.getTweets();
 	}
 
 	render() {

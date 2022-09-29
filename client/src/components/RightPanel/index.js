@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Card } from "react-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faSquareRss, faArrowUpFromBracket } from "@fortawesome/free-solid-svg-icons";
+import { faSquareRss } from "@fortawesome/free-solid-svg-icons";
 import NewsPost from "../NewsPost";
 import RabbitImg from "../../assets/images/rabbit.png";
 import FoxImg from "../../assets/images/fox.png";
@@ -12,7 +12,7 @@ class RightPanel extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            posts: [
+            news: [
                 {
                     profile_img: RabbitImg,
                     name: "StackOverflow",
@@ -47,6 +47,15 @@ class RightPanel extends Component {
         }
     }
 
+    renderNewsPosts = () => {
+        let newsPosts = [];
+        for (let i = 0; i < this.state.news.length; i++) {
+            const post = this.state.news[i];
+            newsPosts.push(<NewsPost key={i} post={post} />);
+        }
+        return newsPosts;
+    }
+
     render() {
         return (
             <div className="px-3 px-lg-4 pt-4 pb-5" id="right-panel">
@@ -57,18 +66,11 @@ class RightPanel extends Component {
                     </a>
                 </div>
                 <Card className="border-0 w-100">
-                    <Card.Header className="d-flex justify-content-between align-items-center">
+                    <Card.Header className="d-flex align-items-center">
                         <Card.Title className="m-0">Latest Updates</Card.Title>
-                        <Card.Link href={"https://twitter.com/i/lists/1568647817408778240"} target="_blank" rel="noreferrer" className="ms-3">
-                            <FontAwesomeIcon icon={faArrowUpFromBracket} size="lg" className="text-secondary share-btn" />
-                        </Card.Link>
                     </Card.Header>
                     <Card.Body className="px-0">
-                        <NewsPost post={this.state.posts[0]} />
-                        <hr className="w-100" />
-                        <NewsPost post={this.state.posts[1]} />
-                        <hr className="w-100" />
-                        <NewsPost post={this.state.posts[2]} />
+                        {this.renderNewsPosts()}
                     </Card.Body>
                 </Card>
             </div>
