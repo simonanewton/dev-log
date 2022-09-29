@@ -15,26 +15,6 @@ class App extends Component {
 		}
 	}
 
-	getTweets = () => {
-		let allTweets = API.getTweets();
-		console.log(allTweets);
-		return allTweets;
-	}
-	getDefault = async () => {
-		let defaultTweets = await API.getDefault();
-		console.log(defaultTweets);
-		return defaultTweets;
-	}
-
-	generateDefault = async () => {
-		await API.generateDefault();
-		return;
-	}
-
-	componentDidMount = () => {
-		// this.getTweets();
-	}
-
 	render() {
 		return (
 			<Container fluid="xxl" className="px-0 h-100">

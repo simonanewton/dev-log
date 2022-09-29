@@ -1,32 +1,30 @@
-const db = require("../models");
+const Tweet = require("../models");
 const defaultTweets = require("./generate");
 
 module.exports = {
     getTweets: (req, res) => {
-        db
+        Tweet
             .find({})
-            .then(result => {
-                console.log(result);
-                res.status(202).json(result);
-            })
-            .catch(err => res.status(422).json(err));
+            .then(result => res.json(result))
+            .catch(err => res.status(404).json(err));
     },
 
-    getDefault: (req, res) => {
-        res.status(202).json(defaultTweets);
+    generateDefaultTweets: (req, res) => {
+        try {
+            defaultTweets.forEach(post => Tweet.insertMany(post));
+            res.status(202).send("Successfully added default tweets to the database.");
+        }
+
+        catch (err) {
+            console.log(err);
+            res.status(404).json(err)
+        }
     },
 
-    generateDefault: (req, res) => {
-        defaultTweets.forEach(post => {
-            console.log(post);
-        })
-            .then(() => {
-                console.log("Sucess.");
-                res.status(202);
-            })
-            .catch(err => {
-                console.log(err);
-                res.status(422).json(err);
-            })
+    deleteAllTweets: (req, res) => {
+        Tweet
+            .deleteMany({})
+            .then(result => res.json(result))
+            .catch(err => res.status(404).json(err));
     }
 }

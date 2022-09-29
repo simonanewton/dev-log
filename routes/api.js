@@ -3,8 +3,8 @@ const controller = require("../controllers");
 
 router.get("/tweets", controller.getTweets);
 
-router.get("/default", controller.getDefault);
+router.post("/generate", controller.generateDefaultTweets);
 
-router.post("/generate", controller.generateDefault);
+router.delete("/tweets", controller.deleteAllTweets);
 
 module.exports = router;

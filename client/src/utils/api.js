@@ -5,11 +5,7 @@ const API = {
         return axios.get("/api/tweets");
     },
 
-    getDefault: () => {
-        return axios.get("/api/default");
-    },
-
-    generateDefault: () => {
+    generateDefaultTweets: () => {
         return axios.post("/api/generate");
     }
 }
