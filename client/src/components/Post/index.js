@@ -42,7 +42,7 @@ class Post extends Component {
                     <div className="py-3 d-flex justify-content-between align-items-center w-100">
                         <div>
                             <Card.Title>
-                                <Card.Link href={this.props.post.profile_url} target="_blank" className="fw-bold post-link">{this.props.post.name}</Card.Link>
+                                <Card.Link href={this.props.post.profile_url} target="_blank" className="post-link">{this.props.post.name}</Card.Link>
                             </Card.Title>
                             <div className="d-flex align-items-center">
                                 <Card.Subtitle className="me-1 text-muted">
@@ -67,19 +67,19 @@ class Post extends Component {
                     </div>
                     <div className="mb-1 d-block d-lg-flex justify-content-between align-items-lg-center text-lg-end">
                         <div className="d-flex flex-nowrap">
-                            <Card.Link href={this.props.post.comments ? (`${this.props.post.url}/comments`) : null} target="_blank" className="ms-0 me-4 position-relative post-icon">
+                            <Card.Link href={this.props.post.comments ? (`${this.props.post.url}/comments`) : null} target="_blank" className="ms-0 me-5 position-relative post-icon">
                                 <FontAwesomeIcon icon={faComment} size="lg" className="text-secondary" />
                                 <Badge pill bg="primary" className={`position-absolute top-0 start-50 ${!this.props.post.comments ? "d-none" : ""}`} style={{ fontSize: "9px" }}>
                                     {this.props.post.comments}
                                 </Badge>
                             </Card.Link>
-                            <Card.Link href={this.props.post.retweets ? (`${this.props.post.url}/retweets`) : null} target="_blank" className="ms-0 me-4 position-relative post-icon">
+                            <Card.Link href={this.props.post.retweets ? (`${this.props.post.url}/retweets`) : null} target="_blank" className="ms-0 me-5 position-relative post-icon">
                                 <FontAwesomeIcon icon={faRetweet} size="lg" className="text-secondary" />
                                 <Badge pill bg="primary" className={`position-absolute top-0 start-50 ${!this.props.post.retweets ? "d-none" : ""}`} style={{ fontSize: "9px" }}>
                                     {this.props.post.retweets}
                                 </Badge>
                             </Card.Link>
-                            <Card.Link href={this.props.post.likes ? (`${this.props.post.url}/likes`) : null} target="_blank" className="ms-0 me-4 position-relative post-icon">
+                            <Card.Link href={this.props.post.likes ? (`${this.props.post.url}/likes`) : null} target="_blank" className="ms-0 me-5 position-relative post-icon">
                                 <FontAwesomeIcon icon={faHeart} size="lg" className="text-secondary" />
                                 <Badge pill bg="primary" className={`position-absolute top-0 start-50 ${!this.props.post.likes ? "d-none" : ""}`} style={{ fontSize: "9px" }}>
                                     {this.props.post.likes}

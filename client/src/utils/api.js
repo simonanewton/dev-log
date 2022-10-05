@@ -6,7 +6,7 @@ const API = {
     },
 
     generateDefaultTweets: () => {
-        return axios.post("/api/generate");
+        return axios.post("/api/default");
     }
 }
 

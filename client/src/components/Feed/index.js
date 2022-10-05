@@ -25,6 +25,14 @@ class Feed extends Component {
         }
     }
 
+    renderPosts = () => {
+        let posts = [];
+        this.props.tweets.forEach(tweet => {
+            posts.push(<Post key={tweet} post={tweet} />);
+        });
+        return posts;
+    }
+
     render() {
         return (
             <div>

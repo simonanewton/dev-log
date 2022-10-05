@@ -7,17 +7,17 @@ import "./index.css";
 class NewsPost extends Component {
     render() {
         return (
-            <div className="px-3 px-lg-4 py-0">
+            <div className="px-3 px-lg-4 py-3 border-top border-2">
                 <div className="d-flex justify-content-between align-items-center">
                     <div className="d-flex align-items-center">
                         <Card.Link href={this.props.post.profile_url} target="_blank" className="me-2 rounded-circle">
                             <Card.Img src={this.props.post.profile_img} alt="User Profile Picture" className="rounded-circle profile-img-news" />
                         </Card.Link>
                         <div>
-                            <div className="d-flex align-items-center">
-                                <Card.Text className="mb-0">
-                                    <Card.Link href={this.props.post.profile_url} target="_blank" className="fw-bold post-link">{this.props.post.name}</Card.Link>
-                                </Card.Text>
+                            <div className="mb-1 d-flex align-items-center">
+                                <Card.Title as={"h6"} className="mb-0">
+                                    <Card.Link href={this.props.post.profile_url} target="_blank" className="post-link">{this.props.post.name}</Card.Link>
+                                </Card.Title>
                                 {this.props.post.verified ? (<FontAwesomeIcon icon={faCheck} mask={faCertificate} size="lg" transform="shrink-7" className="ps-2 text-primary" />) : null}
                             </div>
                             <div className="d-flex align-items-center">

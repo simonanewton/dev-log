@@ -15,6 +15,12 @@ class App extends Component {
 		}
 	}
 
+	componentDidMount = async () => {
+		const tweets = await API.getTweets();
+		this.setState({ tweets: tweets });
+		return;
+	}
+
 	render() {
 		return (
 			<Container fluid="xxl" className="px-0 h-100">
@@ -23,7 +29,7 @@ class App extends Component {
 						<LeftPanel />
 					</Col>
 					<Col xs={12} sm={10} md={6} className="h-100 overflow-auto">
-						<Feed />
+						<Feed tweets={this.state.tweets} />
 					</Col>
 					<Col md={4} className="border-start border-white border-3 d-none d-sm-block h-100 overflow-auto">
 						<RightPanel />
