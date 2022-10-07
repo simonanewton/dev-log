@@ -14,7 +14,7 @@ class Post extends Component {
     }
 
     convertTimestamp = (timestamp) => {
-        return timestamp;
+        return new Date(Date.parse(timestamp)).toLocaleDateString('en-us', { weekday: "long", month: "short", day: "numeric" });
     }
 
     toggleModal = () => {
@@ -24,10 +24,7 @@ class Post extends Component {
     renderBadges = (tags) => {
         let badges = [];
         tags.forEach(tag => {
-            badges.push(
-                <Badge key={tag} as={"a"} href={`https://twitter.com/search?q=%23${tag}`} target="_blank" pill bg="secondary" className="me-2 hashtag">
-                    {`# ${tag}`}
-                </Badge>);
+            badges.push(<Badge key={tag} as={"a"} href={`https://twitter.com/search?q=%23${tag}`} target="_blank" pill bg="secondary" className="me-2 fw-normal hashtag">{`# ${tag}`}</Badge>);
         });
         return badges;
     }
@@ -42,17 +39,17 @@ class Post extends Component {
                     <div className="py-3 d-flex justify-content-between align-items-center w-100">
                         <div>
                             <Card.Title>
-                                <Card.Link href={this.props.post.profile_url} target="_blank" className="post-link">{this.props.post.name}</Card.Link>
+                                <Card.Link href={this.props.post.profile_url} target="_blank" className="post-link">{this.props.post.profile_name}</Card.Link>
                             </Card.Title>
                             <div className="d-flex align-items-center">
-                                <Card.Subtitle className="me-1 text-muted">
+                                <Card.Subtitle className="me-1 text-muted fw-normal">
                                     <span>@</span>
-                                    <Card.Link href={this.props.post.profile_url} target="_blank" className="post-link">{this.props.post.username}</Card.Link>
+                                    <Card.Link href={this.props.post.profile_url} target="_blank" className="post-link">{this.props.post.profile_username}</Card.Link>
                                 </Card.Subtitle>
-                                <Card.Subtitle className="text-muted text-nowrap">{`| ${this.props.post.timestamp}`}</Card.Subtitle>
+                                <Card.Subtitle className="text-muted text-nowrap fw-normal">{`| ${this.convertTimestamp(this.props.post.timestamp)}`}</Card.Subtitle>
                             </div>
                         </div>
-                        <Card.Link href={this.props.post.url} target="_blank" className="mx-2">
+                        <Card.Link href={`https://twitter.com/simonanewtondev/status/${this.props.post.tweet_id}`} target="_blank" className="mx-2">
                             <FontAwesomeIcon icon={faArrowUpFromBracket} size="lg" className="text-secondary share-btn" />
                         </Card.Link>
                     </div>
@@ -67,22 +64,22 @@ class Post extends Component {
                     </div>
                     <div className="mb-1 d-block d-lg-flex justify-content-between align-items-lg-center text-lg-end">
                         <div className="d-flex flex-nowrap">
-                            <Card.Link href={this.props.post.comments ? (`${this.props.post.url}/comments`) : null} target="_blank" className="ms-0 me-5 position-relative post-icon">
+                            <Card.Link href={this.props.post.stats[0].comments ? (`https://twitter.com/simonanewtondev/status/${this.props.post.tweet_id}/comments`) : null} target="_blank" className="ms-0 me-5 position-relative post-icon">
                                 <FontAwesomeIcon icon={faComment} size="lg" className="text-secondary" />
-                                <Badge pill bg="primary" className={`position-absolute top-0 start-50 ${!this.props.post.comments ? "d-none" : ""}`} style={{ fontSize: "9px" }}>
-                                    {this.props.post.comments}
+                                <Badge pill bg="primary" className={`position-absolute top-0 start-50 ${!this.props.post.stats[0].comments ? "d-none" : ""}`} style={{ fontSize: "9px" }}>
+                                    {this.props.post.stats[0].comments}
                                 </Badge>
                             </Card.Link>
-                            <Card.Link href={this.props.post.retweets ? (`${this.props.post.url}/retweets`) : null} target="_blank" className="ms-0 me-5 position-relative post-icon">
+                            <Card.Link href={this.props.post.stats[1].retweets ? (`https://twitter.com/simonanewtondev/status/${this.props.post.tweet_id}/retweets`) : null} target="_blank" className="ms-0 me-5 position-relative post-icon">
                                 <FontAwesomeIcon icon={faRetweet} size="lg" className="text-secondary" />
-                                <Badge pill bg="primary" className={`position-absolute top-0 start-50 ${!this.props.post.retweets ? "d-none" : ""}`} style={{ fontSize: "9px" }}>
-                                    {this.props.post.retweets}
+                                <Badge pill bg="primary" className={`position-absolute top-0 start-50 ${!this.props.post.stats[1].retweets ? "d-none" : ""}`} style={{ fontSize: "9px" }}>
+                                    {this.props.post.stats[1].retweets}
                                 </Badge>
                             </Card.Link>
-                            <Card.Link href={this.props.post.likes ? (`${this.props.post.url}/likes`) : null} target="_blank" className="ms-0 me-5 position-relative post-icon">
+                            <Card.Link href={this.props.post.stats[2].likes ? (`https://twitter.com/simonanewtondev/status/${this.props.post.tweet_id}/likes`) : null} target="_blank" className="ms-0 me-5 position-relative post-icon">
                                 <FontAwesomeIcon icon={faHeart} size="lg" className="text-secondary" />
-                                <Badge pill bg="primary" className={`position-absolute top-0 start-50 ${!this.props.post.likes ? "d-none" : ""}`} style={{ fontSize: "9px" }}>
-                                    {this.props.post.likes}
+                                <Badge pill bg="primary" className={`position-absolute top-0 start-50 ${!this.props.post.stats[2].likes ? "d-none" : ""}`} style={{ fontSize: "9px" }}>
+                                    {this.props.post.stats[2].likes}
                                 </Badge>
                             </Card.Link>
                         </div>

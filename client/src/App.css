@@ -1,7 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;500&display=swap');
-
 * {
-    font-family: "Rubik" !important;
+    font-family: "Segoe UI", Arial, sans-serif !important;
     scroll-behavior: smooth !important;
 }
 
@@ -24,12 +22,12 @@ body {
 }
 
 .profile-img {
-    width: 4rem !important;
+    width: 3.5rem !important;
     height: auto;
 }
 
 .profile-img-news {
-    width: 3.5rem !important;
+    width: 3rem !important;
     height: auto;
 }
 

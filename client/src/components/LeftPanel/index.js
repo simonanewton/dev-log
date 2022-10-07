@@ -10,8 +10,8 @@ class LeftPanel extends Component {
     render() {
         return (
             <div className="px-3 px-lg-4 py-4">
-                <div className="py-2 mb-4">
-                    <a href="/" className="d-flex justify-content-center align-items-center panel-link">
+                <div className="py-2 mb-4 d-flex justify-content-center">
+                    <a href="/" className="panel-link">
                         <FontAwesomeIcon icon={faLaptopCode} size="3x" />
                     </a>
                 </div>
