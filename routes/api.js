@@ -5,6 +5,8 @@ router.get("/tweets", controller.getTweets);
 
 router.get("/timeline", controller.getTimeline);
 
+router.get("/list", controller.getListTweets);
+
 router.get("/tweet/:id", controller.getTweetData);
 
 router.post("/update", controller.updateTweets);
