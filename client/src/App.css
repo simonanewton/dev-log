@@ -1,5 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap');
+
 * {
-    font-family: "Segoe UI", Arial, sans-serif !important;
+    font-family: "Roboto", Arial, sans-serif !important;
     scroll-behavior: smooth !important;
 }
 

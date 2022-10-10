@@ -7,11 +7,7 @@ router.get("/timeline", controller.getTimeline);
 
 router.get("/list", controller.getListTweets);
 
-router.get("/tweet/:id", controller.getTweetData);
-
 router.post("/update", controller.updateTweets);
-
-router.post("/default", controller.generateDefaultTweets);
 
 router.delete("/tweets", controller.deleteAllTweets);
 

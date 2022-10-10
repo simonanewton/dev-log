@@ -4,22 +4,12 @@ import Post from "../Post";
 import "./index.css";
 
 class Feed extends Component {
-    renderPosts = () => {
-        let posts = [];
-        this.props.tweets.forEach(tweet => {
-            posts.push(<Post key={tweet.tweet_id} post={tweet} />);
-        });
-        return posts;
-    }
-
     render() {
         return (
             <div>
-                <div className="d-block d-lg-none">
-                    <MobileHeader />
-                </div>
+                <MobileHeader />
                 <div className="px-4 px-md-3 px-lg-4 pt-2 pb-4">
-                    {this.renderPosts()}
+                    {this.props.tweets.map(tweet => <Post key={tweet.tweet_id} post={tweet} />)}
                 </div>
             </div>
         );

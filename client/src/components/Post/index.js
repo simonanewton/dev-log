@@ -14,19 +14,29 @@ class Post extends Component {
     }
 
     convertTimestamp = (timestamp) => {
-        return new Date(Date.parse(timestamp)).toLocaleDateString('en-us', { weekday: "long", month: "short", day: "numeric" });
+        const converted = new Date(Date.parse(timestamp));
+        const seconds = Math.floor((new Date() - converted) / 1000);
+
+        let interval = seconds / 2592000;
+        if (interval > 1) return converted.toLocaleDateString('en-us', { weekday: "long", month: "short", day: "numeric" });
+
+        interval = seconds / 604800;
+        if (interval > 1) return Math.floor(interval) + "w ago";
+
+        interval = seconds / 86400;
+        if (interval > 1) return Math.floor(interval) + "d ago";
+
+        interval = seconds / 3600;
+        if (interval > 1) return Math.floor(interval) + "h ago";
+
+        interval = seconds / 60;
+        if (interval > 1) return Math.floor(interval) + "m ago";
+
+        return Math.floor(interval) + "s ago";
     }
 
     toggleModal = () => {
         this.setState({ showModal: !this.state.showModal });
-    }
-
-    renderBadges = (tags) => {
-        let badges = [];
-        tags.forEach(tag => {
-            badges.push(<Badge key={tag} as={"a"} href={`https://twitter.com/search?q=%23${tag}`} target="_blank" pill bg="secondary" className="me-2 fw-normal hashtag">{`# ${tag}`}</Badge>);
-        });
-        return badges;
     }
 
     render() {
@@ -38,9 +48,9 @@ class Post extends Component {
                     </Card.Link>
                     <div className="py-3 d-flex justify-content-between align-items-center w-100">
                         <div>
-                            <Card.Title>
-                                <Card.Link href={this.props.post.profile_url} target="_blank" className="post-link">{this.props.post.profile_name}</Card.Link>
-                            </Card.Title>
+                            <Card.Link href={this.props.post.profile_url} target="_blank" className="post-link">
+                                <Card.Title>{this.props.post.profile_name}</Card.Title>
+                            </Card.Link>
                             <div className="d-flex align-items-center">
                                 <Card.Subtitle className="me-1 text-muted fw-normal">
                                     <span>@</span>
@@ -57,9 +67,9 @@ class Post extends Component {
                 <Card.Body className="px-4 pt-0 pb-3">
                     <Card.Text className="mb-3">{this.props.post.text}</Card.Text>
                     <div>
-                        <Card.Img src={this.props.post.image} alt={""} onClick={this.toggleModal} className={`mb-3 bg-light border border-light post-img ${!this.props.post.image ? "d-none" : ""}`} />
+                        <Card.Img src={this.props.post.image} onClick={this.toggleModal} className={`mb-3 bg-light border border-light post-img ${!this.props.post.image ? "d-none" : ""}`} />
                         <Modal size="xl" centered show={this.state.showModal} onHide={this.toggleModal}>
-                            <Card.Img src={this.props.post.image} alt={""} className="rounded" />
+                            <Card.Img src={this.props.post.image} className="rounded" />
                         </Modal>
                     </div>
                     <div className="mb-1 d-block d-lg-flex justify-content-between align-items-lg-center text-lg-end">
@@ -84,7 +94,7 @@ class Post extends Component {
                             </Card.Link>
                         </div>
                         <div className="mt-2 mt-lg-0">
-                            {this.renderBadges(this.props.post.tags)}
+                            {this.props.post.tags.map(tag => <Badge key={tag} as={"a"} href={`https://twitter.com/search?q=%23${tag}`} target="_blank" pill bg="secondary" className="me-2 fw-normal hashtag">{`# ${tag}`}</Badge>)}
                         </div>
                     </div>
                 </Card.Body>
