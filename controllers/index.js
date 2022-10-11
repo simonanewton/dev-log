@@ -70,7 +70,7 @@ module.exports = {
                         return {
                             profile_name: user.name,
                             profile_username: user.username,
-                            profile_img: user.profile_image_url,
+                            profile_img: user.profile_image_url.replace("_normal", ""),
                             profile_url: `https://twitter.com/${user.username}`,
                             tweet_id: tweet.id,
                             url: `https://twitter.com/simonanewtondev/status/${tweet.id}`,

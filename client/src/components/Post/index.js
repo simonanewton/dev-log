@@ -2,14 +2,14 @@ import React, { Component } from "react";
 import { Card, Modal, Badge } from "react-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowUpFromBracket, faComment, faRetweet, faHeart } from "@fortawesome/free-solid-svg-icons";
-import LightbulbImg from "../../assets/images/lightbulb.png";
 import "./index.css";
 
 class Post extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            showModal: false
+            showProfileModal: false,
+            showImgModal: false
         }
     }
 
@@ -35,17 +35,24 @@ class Post extends Component {
         return Math.floor(interval) + "s ago";
     }
 
-    toggleModal = () => {
-        this.setState({ showModal: !this.state.showModal });
+    toggleProfileModal = () => {
+        this.setState({ showProfileModal: !this.state.showProfileModal });
+    }
+
+    toggleImgModal = () => {
+        this.setState({ showImgModal: !this.state.showImgModal });
     }
 
     render() {
         return (
             <Card className="mt-4 border-0">
                 <Card.Header className="px-4 pb-0 bg-transparent border-bottom-0 d-flex align-items-center">
-                    <Card.Link href={this.props.post.profile_url} target="_blank" className="me-2 me-sm-3 rounded-circle">
-                        <Card.Img src={LightbulbImg} alt="User Profile Picture" className="rounded-circle profile-img" />
-                    </Card.Link>
+                    <div className="me-2 me-sm-3">
+                        <Card.Img src={this.props.post.profile_img} alt="User Profile Picture" onClick={this.toggleProfileModal} className="rounded-circle profile-img" />
+                        <Modal centered show={this.state.showProfileModal} onHide={this.toggleProfileModal} className="rounded-circle">
+                            <Card.Img src={this.props.post.profile_img} className="rounded-circle" />
+                        </Modal>
+                    </div>
                     <div className="py-3 d-flex justify-content-between align-items-center w-100">
                         <div>
                             <Card.Link href={this.props.post.profile_url} target="_blank" className="post-link">
@@ -67,8 +74,8 @@ class Post extends Component {
                 <Card.Body className="px-4 pt-0 pb-3">
                     <Card.Text className="mb-3">{this.props.post.text}</Card.Text>
                     <div>
-                        <Card.Img src={this.props.post.image} onClick={this.toggleModal} className={`mb-3 bg-light border border-light post-img ${!this.props.post.image ? "d-none" : ""}`} />
-                        <Modal size="xl" centered show={this.state.showModal} onHide={this.toggleModal}>
+                        <Card.Img src={this.props.post.image} onClick={this.toggleImgModal} className={`mb-3 bg-light border border-light post-img ${!this.props.post.image ? "d-none" : ""}`} />
+                        <Modal size="lg" centered show={this.state.showImgModal} onHide={this.toggleImgModal}>
                             <Card.Img src={this.props.post.image} className="rounded" />
                         </Modal>
                     </div>
