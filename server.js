@@ -14,11 +14,11 @@ app.use(cors());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-if (process.env.NODE_ENV === "production") app.use(express.static("./client/build"));
-
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/dev-log",
     { useUnifiedTopology: true, useNewUrlParser: true }, () => console.log("Connected to Dev Log MongoDB database"));
 
 app.use(routes);
+
+if (process.env.NODE_ENV === "production") app.use(express.static("./client/build"));
 
 app.listen(PORT, () => console.log(`Server is listening on http://localhost:${PORT}`));

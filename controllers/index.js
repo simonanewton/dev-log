@@ -66,8 +66,8 @@ module.exports = {
                     const user = result.data.includes.users[0];
                     const media = result.data.includes.media;
 
-                    const posts = tweets.map(tweet => {
-                        return {
+                    tweets.forEach(tweet => {
+                        const post = {
                             profile_name: user.name,
                             profile_username: user.username,
                             profile_img: user.profile_image_url.replace("_normal", ""),
@@ -84,8 +84,8 @@ module.exports = {
                             ],
                             tags: tweet.entities.hashtags.map(hashtag => hashtag.tag)
                         }
+                        Tweet.updateOne({ tweet_id: post.tweet_id }, { $set: post }, { upsert: true }).catch(err => console.log(err));
                     });
-                    Tweet.insertMany(posts).catch(err => console.log(err));
                     res.status(202).send("Successfully added Timeline to the database.");
                 })
                 .catch(err => console.log(err));
