@@ -1,16 +1,12 @@
 import axios from "axios";
 
 const API = {
-    getTweets: () => {
-        return axios.get("/api/tweets");
+    getTweets: async () => {
+        return await axios.get("/api/tweets");
     },
 
-    updateTweets: () => {
-        return axios.post("/api/update");
-    },
-
-    deleteAllTweets: () => {
-        return axios.delete("/api/tweets");
+    updateTweets: async () => {
+        return await axios.post("/api/update");
     }
 }
 
