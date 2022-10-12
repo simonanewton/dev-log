@@ -75,7 +75,7 @@ class Post extends Component {
                     <Card.Text className="mb-3">{this.props.post.text}</Card.Text>
                     <div>
                         <Card.Img src={this.props.post.image} onClick={this.toggleImgModal} className={`mb-3 bg-light border border-light post-img ${!this.props.post.image ? "d-none" : ""}`} />
-                        <Modal size="lg" centered show={this.state.showImgModal} onHide={this.toggleImgModal}>
+                        <Modal size="lg" centered show={this.state.showImgModal} onHide={this.toggleImgModal} className="post-modal">
                             <Card.Img src={this.props.post.image} className="rounded" />
                         </Modal>
                     </div>

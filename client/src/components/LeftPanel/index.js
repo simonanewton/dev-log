@@ -34,10 +34,10 @@ class LeftPanel extends Component {
                     <PanelBtn color={"primary"} link={"https://twitter.com/simonanewtondev"} title={"Profile"} icon={faTwitter} />
                 </div>
                 <Modal centered show={this.state.showModal} onHide={this.toggleModal}>
-                    <Modal.Header className="px-4" closeButton>
+                    <Modal.Header className="px-4 bg-light" closeButton>
                         <Modal.Title>Web Developer Log</Modal.Title>
                     </Modal.Header>
-                    <Modal.Body className="px-4">
+                    <Modal.Body className="px-4 bg-white rounded-bottom">
                         <p>This is an application that showcases tweets from my personal developer Twitter account. You can find
                             updates on what I'm currently working on, thoughts and comments I have while programming, and resources
                             I find while researching.
