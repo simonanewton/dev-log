@@ -1,12 +1,12 @@
 import axios from "axios";
 
 const API = {
-    getTweets: async () => {
-        return await axios.get("/api/tweets");
+    getTweets: () => {
+        return axios.get("/api/tweets");
     },
 
     updateTweets: async () => {
-        return await axios.post("/api/update");
+        return axios.get("/api/update");
     }
 }
 

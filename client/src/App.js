@@ -15,10 +15,11 @@ class App extends Component {
 	}
 
 	componentDidMount = async () => {
-		await API.updateTweets();
+		const response = await API.updateTweets();
+		console.log(response);
 
-		const response = await API.getTweets();
-		this.setState({ tweets: response.data });
+		const tweets = await API.getTweets();
+		this.setState({ tweets: tweets.data });
 	}
 
 	render() {

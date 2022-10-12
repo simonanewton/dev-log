@@ -3,7 +3,7 @@ const controller = require("../controllers");
 
 router.get("/tweets", controller.getTweets);
 
-router.post("/update", controller.updateTweets);
+router.get("/update", controller.updateTweets);
 
 router.delete("/tweets", controller.deleteTweets);
 
