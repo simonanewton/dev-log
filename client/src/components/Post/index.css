@@ -9,7 +9,7 @@
     cursor: pointer;
 }
 
-.modal-content {
+.card .modal-content {
     border: none !important;
     background-color: transparent !important;
 }

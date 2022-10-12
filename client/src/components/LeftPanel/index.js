@@ -27,7 +27,7 @@ class LeftPanel extends Component {
                     </a>
                 </div>
                 <div className="text-center text-lg-end w-100">
-                    <PanelBtn color={"outline-dark"} title={"Home"} icon={faHouseUser} />
+                    <PanelBtn color={"outline-dark"} link={"/"} title={"Home"} icon={faHouseUser} />
                     <PanelBtn color={"outline-dark"} toggle={this.toggleModal} title={"About"} icon={faCircleInfo} />
                     <PanelBtn color={"outline-dark"} link={"https://developer.twitter.com/en/docs/twitter-api"} title={"Twitter"} icon={faServer} />
                     <PanelBtn color={"outline-dark"} link={"https://github.com/simonanewton/dev-log"} title={"GitHub"} icon={faGithub} />
