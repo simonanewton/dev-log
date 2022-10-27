@@ -1,7 +1,7 @@
 # Web Developer Portfolio
 
 <div align="center">
-  <img src="./assets/site-header.png" alt="Web Developer Log Header" width="80%" />
+    <img src="./assets/site-header.png" alt="Web Developer Log Header" width="80%" />
 </div>
 
 ## Description
@@ -92,11 +92,11 @@ proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 ## Contributing
 
 <div>
-  <img src="./assets/profile-picture-circle.png" alt="Simon Newton Profile Picture" width=250 />
-  <h3><b>Simon Newton</b></h3>
-  <hr align=left width=350 />
-  <p>Hey I'm Simon and I'm a Junior Full-Stack Web Developer!</p>
-  <a href="https://github.com/simonanewton" target="_blank">GitHub Profile</a> | <a href="https://www.linkedin.com/in/simon-newton-2a7440129/" target="_blank">LinkedIn Profile</a> | <a href="https://simonanewton.herokuapp.com/" target="_blank">Personal Website</a>
+    <img src="./assets/profile-picture-circle.png" alt="Simon Newton Profile Picture" width=250 />
+    <h3><b>Simon Newton</b></h3>
+    <hr align=left width=350 />
+    <p>Hey I'm Simon and I'm a Junior Full-Stack Web Developer!</p>
+    <a href="https://github.com/simonanewton" target="_blank">GitHub Profile</a> | <a href="https://www.linkedin.com/in/simon-newton-2a7440129/" target="_blank">LinkedIn Profile</a> | <a href="https://simonanewton.herokuapp.com/" target="_blank">Personal Website</a>
 </div>
 
 ## Credits
