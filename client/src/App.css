@@ -10,6 +10,11 @@ body {
     background-color: #cbdaec !important;
 }
 
+.overflow-auto {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
 .overflow-auto::-webkit-scrollbar {
     display: none;
 }
@@ -29,7 +34,7 @@ body {
 }
 
 .profile-img-news {
-    width: 3.5rem !important;
+    max-width: 3rem !important;
     height: auto;
 }
 
@@ -45,4 +50,9 @@ body {
 
 .post-link:hover {
     text-decoration: underline !important;
+}
+
+.modal-content {
+    border: none !important;
+    background-color: transparent !important;
 }

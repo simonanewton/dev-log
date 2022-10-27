@@ -9,11 +9,6 @@
     cursor: pointer;
 }
 
-.modal-content {
-    border: none !important;
-    background-color: transparent !important;
-}
-
 .hashtag {
     text-decoration: none !important;
 }

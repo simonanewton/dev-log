@@ -5,6 +5,10 @@ const API = {
         return axios.get("/api/tweets");
     },
 
+    getListTweets: () => {
+        return axios.get("/api/list");
+    },
+
     updateTweets: () => {
         return axios.get("/api/update");
     }

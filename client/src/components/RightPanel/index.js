@@ -3,59 +3,9 @@ import { Card } from "react-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSquareRss } from "@fortawesome/free-solid-svg-icons";
 import NewsPost from "../NewsPost";
-import RabbitImg from "../../assets/images/rabbit.png";
-import FoxImg from "../../assets/images/fox.png";
-import WalrusImg from "../../assets/images/walrus.png";
 import "./index.css";
 
 class RightPanel extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            news: [
-                {
-                    profile_img: RabbitImg,
-                    name: "StackOverflow",
-                    verified: true,
-                    username: "StackOverflow",
-                    profile_url: "https://twitter.com/StackOverflow",
-                    timestamp: "26m",
-                    text: "On our latest episode, we sat down with @YouveGotFox, CEO & co-founder of AssemblyAI, to talk about what sparked his interest in AI and machine learning and how their solutions help major companies.",
-                    image: ""
-                },
-                {
-                    profile_img: FoxImg,
-                    name: "GitHub",
-                    verified: true,
-                    username: "github",
-                    profile_url: "https://twitter.com/github",
-                    timestamp: "1h",
-                    text: "Want to learn how to use GitHub Actions to deploy storefronts? @Shopify shares the secret to success, and how you can leverage their tips for your own deployments.",
-                    image: "",
-                },
-                {
-                    profile_img: WalrusImg,
-                    name: "MongoDB",
-                    verified: true,
-                    username: "MongoDB",
-                    profile_url: "https://twitter.com/MongoDB",
-                    timestamp: "3d",
-                    text: "You have something to contribute to the conversation — don't be afraid to speak up and use your voice. See how our MDBWomen's panel believes we can break biases in the tech industry and strive for equity in the workplace.",
-                    image: "",
-                }
-            ]
-        }
-    }
-
-    renderNewsPosts = () => {
-        let newsPosts = [];
-        for (let i = 0; i < this.state.news.length; i++) {
-            const post = this.state.news[i];
-            newsPosts.push(<NewsPost key={i} post={post} />);
-        }
-        return newsPosts;
-    }
-
     render() {
         return (
             <div className="px-3 px-lg-4 pt-4 pb-5" id="right-panel">
@@ -70,7 +20,7 @@ class RightPanel extends Component {
                         <Card.Title className="m-0">Latest Updates</Card.Title>
                     </Card.Header>
                     <Card.Body className="p-0">
-                        {this.renderNewsPosts()}
+                        {this.props.news ? this.props.news.map(post => <NewsPost key={post.tweet_id} post={post} />) : null}
                     </Card.Body>
                 </Card>
             </div>
